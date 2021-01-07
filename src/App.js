@@ -15,11 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-<<<<<<< HEAD
-          Learn React t la hao
-=======
-          Learn React co i tao config
->>>>>>> 588301ff08d78dbc06db27071b1241852d1c23d0
+          Learn React t la hao 3456346
         </a>
       </header>
     </div>
