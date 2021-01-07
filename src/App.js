@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React 1
+          Learn React co i tao config
         </a>
       </header>
     </div>
