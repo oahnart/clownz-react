@@ -1,9 +1,15 @@
 import produce from "immer";
 
 import * as actionTypes from "./actionTypes";
+import { data } from "../../utils/constants/fakeData";
+
+// const initialState = {
+//   product: [],
+//   isFetching: false,
+// };
 
 const initialState = {
-  product: [],
+  product: data,
   isFetching: false,
 };
 

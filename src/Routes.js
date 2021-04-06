@@ -12,6 +12,7 @@ import { store } from "./index";
 import "./App.scss";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import Cart from "./features/cart/Cart";
 
 // const isViewFullPage = (pathname) => {
 //   return (
@@ -32,6 +33,7 @@ class Routes extends Component {
         <Redirect exact from="/" to={constants.routes.HOME} />
         <PublicRoute exact path={constants.routes.HOME} component={Home} />
         <PublicRoute exact path={constants.routes.LOGIN} component={Login} />
+        <PublicRoute exact path={constants.routes.CART} component={Cart} />
       </Switch>
     );
   }

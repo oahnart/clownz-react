@@ -28,7 +28,7 @@ export const routes = {
   FORGOT_PASSWORD: "/forgot-password",
   //////////////
   HOME: "/home",
-  ARENA: "/arena",
+  CART: "/cart",
 };
 
 export const DEVICE_STATUS = {

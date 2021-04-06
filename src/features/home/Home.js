@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Box, Grid, makeStyles } from "@material-ui/core";
-import utilStyles from "../../utils/constants/styles/utilStyles";
-import clsx from "clsx";
+import { Link } from "react-router-dom";
+// import utilStyles from "../../utils/constants/styles/utilStyles";
+// import clsx from "clsx";
 import { connect } from "react-redux";
 import { actionGetProducts } from "./actions";
 import ItemProduct from "./ItemProduct";
@@ -36,11 +37,15 @@ const useStyles = makeStyles((theme) => ({
       // padding: "0 25px",
     },
   },
+  productName: {
+    paddingLeft: 15,
+    paddingBottom: 15,
+  },
 }));
 
 const Home = (props) => {
   const classes = useStyles();
-  const classesUtils = utilStyles();
+  // const classesUtils = utilStyles();
 
   useEffect(() => {
     _getData(params);
@@ -54,7 +59,9 @@ const Home = (props) => {
     <>
       {listMenu.map((el, index) => (
         <Box key={index} className={classes.container}>
-          <Box component="h2">{el.name}</Box>
+          <Link to="/#" className={classes.productName}>
+            {el.name}
+          </Link>
           <Grid container className={classes.centerGrid}>
             {props.product.map((data, indexs) => (
               <ItemProduct key={indexs} dataProduct={data} dataMenu={el.name} />
