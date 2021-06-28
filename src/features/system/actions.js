@@ -68,3 +68,36 @@ export const actionLogout = () => {
     type: actionTypes.SIGN_OUT,
   };
 };
+
+// api
+const getProducts = (params) => {
+  return api({
+    method: "get",
+    url: "/products",
+    params,
+  });
+};
+export const actionGetProducts = (params) => async (dispatch) => {
+  try {
+    dispatch({
+      type: actionTypes.FETCHING_PRODUCT,
+    });
+    const { data } = await getProducts(params);
+    dispatch({
+      type: actionTypes.FETCHING_PRODUCT_SUCCESS,
+      payload: data.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: actionTypes.FETCHING_PRODUCT_ERROR,
+    });
+  }
+};
+
+export const actAddToCart = (product, quantity) => {
+  return {
+    type: actionTypes.ADD_TO_CART,
+    product,
+    quantity,
+  };
+};

@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { Box, Grid, makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
 // import utilStyles from "../../utils/constants/styles/utilStyles";
 // import clsx from "clsx";
 import { connect } from "react-redux";
-import { actionGetProducts, actAddToCart } from "../system/actions";
-import ItemProduct from "./ItemProduct";
+import { actionGetProducts } from "../system/actions";
+import ItemTop from "./ItemTop";
 import { listMenu } from "../../components/layout/ListMenu";
 
 const params = {
@@ -43,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home = (props) => {
+const Top = (props) => {
   const classes = useStyles();
   // const classesUtils = utilStyles();
 
@@ -59,17 +58,9 @@ const Home = (props) => {
     <>
       {listMenu.map((el, index) => (
         <Box key={index} className={classes.container}>
-          <Link to="/#" className={classes.productName}>
-            {el.name}
-          </Link>
           <Grid container className={classes.centerGrid}>
             {props.product.map((data, indexs) => (
-              <ItemProduct
-                key={indexs}
-                dataProduct={data}
-                dataMenu={el.name}
-                actAddToCart={props.actAddToCart}
-              />
+              <ItemTop key={indexs} dataProduct={data} dataMenu={el.name} />
             ))}
           </Grid>
         </Box>
@@ -83,5 +74,5 @@ export default connect(
     product: state.systemReducer.product,
     isFetching: state.systemReducer.isFetching,
   }),
-  { actionGetProducts, actAddToCart }
-)(Home);
+  { actionGetProducts }
+)(Top);

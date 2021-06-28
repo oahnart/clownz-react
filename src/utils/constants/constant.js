@@ -29,6 +29,7 @@ export const routes = {
   //////////////
   HOME: "/home",
   CART: "/cart",
+  TOP: "/top",
 };
 
 export const DEVICE_STATUS = {

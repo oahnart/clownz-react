@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 // import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 import SlideShow from "../../components/layout/SlideShow";
 // import { actionGetProfile } from "../../features/system/actions";
 // import { routes } from "../../utils/constants/constant";
@@ -317,7 +318,7 @@ const Header = (props) => {
                     size="medium"
                     startIcon={<ShoppingCartIcon />}
                   >
-                    Cart
+                    Cart {props.cart.length > 0 ? `(${props.cart.length})` : ""}
                   </Button>
                 </Link>
               </Grid>
@@ -374,4 +375,9 @@ const Header = (props) => {
   );
 };
 
-export default withRouter(Header);
+export default connect(
+  (state) => ({
+    cart: state.systemReducer.cart,
+  }),
+  {}
+)(withRouter(Header));

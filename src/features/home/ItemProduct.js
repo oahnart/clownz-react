@@ -1,10 +1,13 @@
 import React from "react";
+// import { actAddToCart } from "../system/actions";
 import { Grid, makeStyles, Box } from "@material-ui/core";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     height: 450,
     margin: "0 15px",
+    position: "relative",
   },
   imageContent: {
     height: 210,
@@ -16,16 +19,19 @@ const useStyles = makeStyles((theme) => ({
     padding: "35px 0",
   },
   addToCart: {
-    color: "red",
     cursor: "pointer",
+    position: "absolute",
+    top: 10,
+    right: 10,
   },
 }));
 
-const ItemProduct = ({ dataProduct, dataMenu }) => {
+const ItemProduct = ({ dataProduct, dataMenu, actAddToCart }) => {
   const classes = useStyles();
 
   const addToCart = (data) => {
     console.log("itemproduct", data);
+    actAddToCart(data);
   };
 
   return (
@@ -50,7 +56,7 @@ const ItemProduct = ({ dataProduct, dataMenu }) => {
                   onClick={() => addToCart(el)}
                   className={classes.addToCart}
                 >
-                  Mua hàng
+                  <AddShoppingCartIcon color="secondary" />
                 </Box>
               </Box>
             </Grid>
@@ -75,7 +81,7 @@ const ItemProduct = ({ dataProduct, dataMenu }) => {
                   onClick={() => addToCart(el)}
                   className={classes.addToCart}
                 >
-                  Mua hàng
+                  <AddShoppingCartIcon color="secondary" />
                 </Box>
               </Box>
             </Grid>
@@ -100,7 +106,7 @@ const ItemProduct = ({ dataProduct, dataMenu }) => {
                   onClick={() => addToCart(el)}
                   className={classes.addToCart}
                 >
-                  Mua hàng
+                  <AddShoppingCartIcon color="secondary" />
                 </Box>
               </Box>
             </Grid>
@@ -125,7 +131,7 @@ const ItemProduct = ({ dataProduct, dataMenu }) => {
                   onClick={() => addToCart(el)}
                   className={classes.addToCart}
                 >
-                  Mua hàng
+                  <AddShoppingCartIcon color="secondary" />
                 </Box>
               </Box>
             </Grid>
@@ -150,7 +156,7 @@ const ItemProduct = ({ dataProduct, dataMenu }) => {
                   onClick={() => addToCart(el)}
                   className={classes.addToCart}
                 >
-                  Mua hàng
+                  <AddShoppingCartIcon color="secondary" />
                 </Box>
               </Box>
             </Grid>
@@ -175,7 +181,7 @@ const ItemProduct = ({ dataProduct, dataMenu }) => {
                   onClick={() => addToCart(el)}
                   className={classes.addToCart}
                 >
-                  Mua hàng
+                  <AddShoppingCartIcon color="secondary" />
                 </Box>
               </Box>
             </Grid>
